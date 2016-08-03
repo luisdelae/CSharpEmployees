@@ -14,6 +14,11 @@ namespace eManager.Web.Infrastructure
         public DbSet<Employee> Employees { get; set; }
         public DbSet<Department> Departments { get; set; }
 
+        void IDepartmentDataSource.Save()
+        {
+            SaveChanges();
+        }
+
         IQueryable<Employee> IDepartmentDataSource.Employees
         {
             get
@@ -29,5 +34,7 @@ namespace eManager.Web.Infrastructure
                 return Departments;
             }
         }
+
+        public System.Data.Entity.DbSet<eManager.Web.Models.CreateEmployeeViewModel> CreateEmployeeViewModels { get; set; }
     }
 }

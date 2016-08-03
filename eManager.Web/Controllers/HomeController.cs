@@ -12,7 +12,8 @@ namespace eManager.Web.Controllers
     {
 
         private IDepartmentDataSource _db = new DepartmentDb();
-         
+        // Go back to this https://app.pluralsight.com/player?course=mvc4&author=scott-allen&name=mvc4-m1-introduction-i&clip=4&mode=live if you run into issues with this constructor
+
         public ActionResult Index()
         {
             var allDeparements = _db.Departments;
